@@ -223,7 +223,7 @@ function elt(name, attrs, ...children) {
   return dom;
 }
 
-const scale = 20;
+const scale = 60;
 
 function drawGrid(level) {
   return elt("table", {
