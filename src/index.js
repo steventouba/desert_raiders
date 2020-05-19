@@ -56,6 +56,44 @@ Player.prototype.update = function (time, state, keys) {
   return new Player(pos, new Vec(xSpeed, ySpeed));
 };
 
+class Enemy {
+  constructor(pos, speed) {
+    this.pos = pos;
+    this.speed = speed;
+  }
+
+  get type() { 
+    return "enemy"; 
+  }
+
+  static create(pos) {
+    return new Enemy(pos.plus(new Vec(0, -0.6)),
+      new Vec(2, 0))
+  }
+}
+
+Enemy.prototype.size = new Vec(0.8, 1.6);
+
+Enemy.prototype.update = function (time, state) {
+  let newPos = this.pos.plus(this.speed.times(time));
+  if (!state.level.touches(newPos, this.size, "wall")) {
+    return new Enemy(newPos, this.speed, this.reset);
+  } else {
+    return new Enemy(this.pos, this.speed.times(-1));
+  }
+};
+
+Enemy.prototype.collide = function (state) {
+  let filtered = state.actors.filter(a => a != this);
+  let player = state.actors.filter(a => a.type == "player").shift();
+  let status = state.status;
+  if (player.slashing) {
+    return new State(state.level, filtered, status);
+  } else {
+    return new State(state.level, state.actors, "lost");
+  }
+}
+
 class Lava {
   constructor(pos, speed, reset) {
     this.pos = pos; 
@@ -134,6 +172,7 @@ const levelChars = {
   "#": "wall", 
   "+": "lava", 
   "@": Player, 
+  "m": Enemy,
   "o": Coin, 
   "=": Lava, 
   "|": Lava, 
@@ -178,6 +217,7 @@ Level.prototype.touches = function (pos, size, type) {
 
 class State {
   constructor(level, actors, status) { 
+    debugger
     this.level = level; 
     this.actors = actors;
     this.status = status; 
@@ -298,8 +338,7 @@ DOMDisplay.prototype.scrollPlayerIntoView = function (state) {
   let top = this.dom.scrollTop, bottom = top + height;
   
   let player = state.player;
-  let center = player.pos.plus(player.size.times(0.5))
-    .times(scale);
+  let center = player.pos.plus(player.size.times(0.5)).times(scale);
 
   if (center.x < left + margin) {
     this.dom.scrollLeft = center.x - margin;
@@ -350,11 +389,14 @@ function runLevel(level, Display) {
 }
 
 async function runGame(plans, Display) {
-  debugger
+  let lives = 3; 
   for (let level = 0; level < plans.length;) {
+    debugger
     let status = await runLevel(new Level(plans[level]),
       Display);
-    if (status == "won") level++;
+    if (status === "won") {
+      level++
+    } 
   }
   console.log("You've won!");
 }

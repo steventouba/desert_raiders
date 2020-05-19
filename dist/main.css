@@ -26,6 +26,10 @@
   background: rgb(64, 64, 64);  
 }
 
+.enemy { 
+  background: black;
+}
+
 .lost .player {
   background: rgb(160, 64, 64);
 }
