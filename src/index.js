@@ -64,7 +64,7 @@ class Enemy {
   }
 }
 
-Enemy.prototype.size = new Vector(0.8, 1.6);
+Enemy.prototype.size = new Vector(1.25, 1.6);
 
 Enemy.prototype.update = function (time, state) {
   let newPos = this.pos.plus(this.speed.times(time));
@@ -93,9 +93,10 @@ const levelChars = {
   "+": "lava",
   "~": "lavaTop",
   "T": "trap",
+  "C": "chest",
   "d": Door,
   "e": Enemy,
-  "@": Player
+  "@": Player,
 };
 
 class Level {
@@ -239,7 +240,7 @@ function overlap(actor1, actor2) {
 
 const playerXSpeed = 7;
 const gravity = 30;
-const jumpSpeed = 11.5;
+const jumpSpeed = 14.5;
 const enemyXSpeed = 7;
 
 Player.prototype.update = function (time, state, keys) {
@@ -394,10 +395,10 @@ CanvasDisplay.prototype.updateViewport = function (state) {
 };
 
 let otherSprites = document.createElement("img");
-otherSprites.src = "sprites/background_spritesheet.png";
+otherSprites.src = "sprites/tiles.png";
 
 let background = document.createElement("img");
-background.src = "sprites/background_spritesheet.png";
+background.src = "sprites/background.png";
 
 CanvasDisplay.prototype.drawBackground = function (level) {
   let { left, top, width, height } = this.viewport;
@@ -415,13 +416,13 @@ CanvasDisplay.prototype.drawBackground = function (level) {
       let screenX = (x - left) * scale;
       let screenY = (y - top) * scale;
       let tileX;
-
+      // second # is which tile to grab from sheet 
       if (tile == "lava") {
         tileX = scale
       } else if (tile == "lavaTop") {
-        tileX = scale * 3
+        tileX = scale * 5    
       } else if (tile == "trap") {
-        tileX = scale * 4
+        tileX = scale * 1
       } else {
         tileX = 0
       }
@@ -443,7 +444,7 @@ let playerSprites = document.createElement("img");
 playerSprites.src = "sprites/heroine_sprite.png";
 
 let slashingSprites = document.createElement("img");
-slashingSprites.src = "sprites/enemy_spritesheet.png";
+slashingSprites.src = "sprites/satyr1.png";
 
 const playerXOverlap = 38;
 const playerYOverlap = 10;
@@ -484,7 +485,7 @@ CanvasDisplay.prototype.drawPlayer = function (player, x, y, width, height) {
 };
 
 let enemySprites = document.createElement("img");
-enemySprites.src = "sprites/enemy_spritesheet.png";
+enemySprites.src = "sprites/satyr1.png";
 const enemyXOverlap = 38;
 const enemyYOverlap = 10;
 
@@ -501,7 +502,7 @@ CanvasDisplay.prototype.drawEnemy = function (enemy, x, y, width, height) {
   if (enemy.speed.y != 0) {
     tile = 0;
   } else if (enemy.speed.x != 0) {
-    tile = Math.floor(Date.now() / 60) % 11;
+    tile = Math.floor(Date.now() / 120) % 16;
   }
 
   this.cx.save();
@@ -509,8 +510,7 @@ CanvasDisplay.prototype.drawEnemy = function (enemy, x, y, width, height) {
     flipHorizontally(this.cx, x + width / 2);
   }
   let tileX = tile * width;
-  this.cx.drawImage(enemySprites, tileX, 0, width, height,
-    x, y, width, height);
+  this.cx.drawImage(enemySprites, tileX, 0, width, height, x, y, width, height);
   this.cx.restore();
 };
 
@@ -551,12 +551,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 
-let GAME_LEVELS = [
-  `........................../........................../.............|...e|......d/..............####......##/..........##...##......###/@.........##~~~##~~~~#####/###~~~~~####+++##++++#####/###+++++####+++##++++#####/##########################`,
-  `#########................./#########d|.e........|..../######################..##/.......................###/.......................###/@........####.........####/##T####~~####~~####~~#####/#######++####++####++#####/##########################`,
-  `........................../.|.................e..|.../..####################..../....................##..../#|.e..............|.##..../##################..##...d/....................##~~##/@..................###++##/####T######T##########++##`,
-  `........................../@........|e............|../###......###############../.........#................/.........#................/..########...####........./............####........../|e........|.##......|e..|d/T#########T###~~~~~~######`,
-  `........................../d........................./#####|.e..|...##########../....######~~~##.........../.........#####...........#/......................####/....................#T####/@....|.e......e.|#T#######/###TT#####################`,
-  `........................../........................../........................../...d.....#..#............./...###..##.....#T#......../.....................#..../...........#.........##.../@...##.....#.....##......./##~~##~#~~##~~~#~~~~~~~~~~`,
-  `........................../@.|..e..|................./#T#########.|.e....|....../............T######......./d........#.............#T#/#........#................/|.e.|...................../####.........T#####......./##~~~~####~~~~~~~~~~~~~~~~`
-];
+let GAME_LEVELS = [`
+........................../........................../........................../........................../........................../........................../@..|...e............|...../############TT####TT######/##########################`];
+// const levelChars = {
+//   ".": "empty",
+//   "#": "wall",
+//   "|": "invisibleWall",
+//   "+": "lava",
+//   "~": "lavaTop",
+//   "T": "trap",
+//   "C": "chest",
+//   "d": Door,
+//   "e": Enemy,
+//   "@": Player,
+// };
