@@ -10,21 +10,21 @@
   background: rgb(255, 100, 100); 
 }
 .wall {
-  background: white;              
+  background: white;          
 }
 
-.actor { 
+/* .actor { 
   position: absolute;            
-}
+} */
 
 .coin { 
   background: rgb(241, 229, 89); 
   border-radius: 20px;
 }
 
-.player { 
+/* .player { 
   background: rgb(64, 64, 64);  
-}
+} */
 
 .enemy { 
   background: black;
@@ -43,4 +43,29 @@
   min-width: 600px;
   min-height: 450px;
   position: relative;
+}
+
+canvas {
+    width: 950px;
+    height: 530px;
+    border-radius: 10px;
+    margin: 20px;
+    box-shadow: 5px 10px 8px #888888;
+}
+
+.canvas-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.canvas-container h1 {
+    margin: 0;
+    font-size: 40px;
+    padding: 0 20px;
+}
+
+.canvas-container hr {
+    border-bottom: solid 2px black;
+    width: 400px;
 }
