@@ -1,44 +1,21 @@
+.root { 
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.container { 
+  display: flex;
+  flex-direction: co;
+}
 .background { 
-  background: rgb(52, 166, 251);
   table-layout: fixed;
   border-spacing: 0;              
 }
 .background td {
   padding: 0;                     
 }
-.lava { 
-  background: rgb(255, 100, 100); 
-}
-.wall {
-  background: white;          
-}
-
-/* .actor { 
-  position: absolute;            
-} */
-
-/* .coin { 
-  background: rgb(241, 229, 89); 
-  border-radius: 20px;
-} */
-
-/* .player { 
-  background: rgb(64, 64, 64);  
-} */
-
-.enemy { 
-  background: black;
-}
-
-.lost .player {
-  background: rgb(160, 64, 64);
-}
-.won .player {
-  box-shadow: -4px -7px 8px white, 4px -7px 8px white;
-}
 
 .game {
-  padding-left: 2%;
   overflow: hidden;
   min-width: 600px;
   min-height: 450px;
@@ -53,7 +30,7 @@ canvas {
     box-shadow: 5px 10px 8px #888888;
 }
 
-.canvas-container {
+#canvas-container {
     display: flex;
     flex-direction: column;
     align-items: center;
