@@ -10,13 +10,15 @@ class Treasure {
 
   get type() { return "treasure"; }
 
+  get type2() { return Math.floor(Math.random() * 5 )}
+
   static create(pos) {
     let basePos = pos.plus(new Vector(0.2, 0.1));
     return new Treasure(basePos, basePos, Math.random() * Math.PI * 2);
   }
 }
 
-Treasure.prototype.size = new Vector(0.6, 0.6);
+Treasure.prototype.size = new Vector(0.45, 0.6);
 
 Treasure.prototype.collide = function (state) {
   let filtered = state.actors.filter(a => a != this);
@@ -30,7 +32,7 @@ const wobbleSpeed = 8, wobbleDist = 0.07;
 Treasure.prototype.update = function (time) {
   let wobble = this.wobble + time * wobbleSpeed;
   let wobblePos = Math.sin(wobble) * wobbleDist;
-  return new Treasure(this.basePos.plus(new Vec(0, wobblePos)),
+  return new Treasure(this.basePos.plus(new Vector(0, wobblePos)),
     this.basePos, wobble);
 };
 

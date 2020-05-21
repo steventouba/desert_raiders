@@ -6,17 +6,19 @@ const enemyXOverlap = 38;
 const enemyYOverlap = 10;
 
 const enemySprites = document.createElement("img");
-enemySprites.src = "sprites/satyr1.png";
+enemySprites.src = "sprites/enemies/satyr1.png";
 
 const playerSprites = document.createElement("img");
 playerSprites.src = "sprites/heroine_sprite.png";
 
 const slashingSprites = document.createElement("img");
-slashingSprites.src = "sprites/satyr1.png";
+slashingSprites.src = "sprites/enemies/satyr2.png";
 
 const tiles = document.createElement("img");
 tiles.src = "sprites/tiles.png";
 
+const items = document.createElement("img"); 
+items.src = "sprites/items.png";
 const background = document.createElement("img");
 background.src = "sprites/background.png";
 
@@ -174,7 +176,11 @@ CanvasDisplay.prototype.drawActors = function (actors) {
     } else if (actor.type == "enemy") {
       this.drawEnemy(actor, x, y, width, height);
     } else if (actor.type == "treasure") {
-      this.drawImage(actor, x, y, width, height);
+      let tileX = 0 * width; 
+      this.cx.drawImage(items, tileX, 0,
+        width, height, x,
+        y, width, height
+      );
     } else {
       let tileX = (actor.type == "door" ? scale * 2 - .5 : scale);
 
