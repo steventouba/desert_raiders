@@ -43,6 +43,7 @@ exports.runGame = async function(plans, Display) {
     if (status == "won") {
       console.log(`You beat level ${level + 1}`);
       level++;
+      background.src = `sprites/background/background${level}.png`
     }
   }
   let canvasEl = document.createElement("canvas");

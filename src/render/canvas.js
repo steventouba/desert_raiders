@@ -26,8 +26,8 @@ tiles.src = "sprites/tiles.png";
 const items = document.createElement("img"); 
 items.src = "sprites/items.png";
 
-const background = document.createElement("img");
-background.src = "sprites/background.png";
+window.background = document.createElement("img");
+background.src = "sprites/background/background.png";
 
 class CanvasDisplay {
   constructor() {
@@ -73,6 +73,7 @@ CanvasDisplay.prototype.updateViewport = function (state) {
 };
 
 CanvasDisplay.prototype.drawBackground = function (level) {
+
   let { left, top, width, height } = this.viewport;
   let xStart = Math.floor(left);
   let xEnd = Math.ceil(left + width);

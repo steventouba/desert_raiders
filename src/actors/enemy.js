@@ -3,7 +3,6 @@ const State = require('../game/state.js');
 
 class Enemy {
   constructor(pos, speed, ch) {
-    debugger
     this.pos = pos;
     this.speed = speed;
     this.spriteImage = typeof ch === 'number' ? ch : this.chooseSpriteImage(ch);
