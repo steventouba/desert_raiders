@@ -6,28 +6,28 @@ const enemyXOverlap = 38;
 const enemyYOverlap = 10;
 
 const minionSprites = document.createElement("img");
-minionSprites.src = "sprites/enemies/satyr1.png";
+minionSprites.src = "./dist/sprites/enemies/satyr1.png";
 
 const shamanSprites = document.createElement("img");
-shamanSprites.src = "sprites/enemies/satyr2.png";
+shamanSprites.src = "./dist/sprites/enemies/satyr2.png";
 
 const bigBossSprites = document.createElement("img");
-bigBossSprites.src = "sprites/enemies/satyr3.png";
+bigBossSprites.src = "./dist/sprites/enemies/satyr3.png";
 
 const playerSprites = document.createElement("img");
-playerSprites.src = "sprites/heroine_sprite.png";
+playerSprites.src = "./dist/sprites/heroine_sprite.png";
 
 const slashingSprites = document.createElement("img");
-slashingSprites.src = "sprites/enemies/satyr2.png";
+slashingSprites.src = "./dist/sprites/enemies/satyr2.png";
 
 const tiles = document.createElement("img");
-tiles.src = "sprites/tiles.png";
+tiles.src = "./dist/sprites/tiles.png";
 
 const items = document.createElement("img"); 
-items.src = "sprites/items.png";
+items.src = "./dist/sprites/items.png";
 
 window.background = document.createElement("img");
-background.src = "sprites/background/background.png";
+background.src = "./dist/sprites/background/background.png";
 
 class CanvasDisplay {
   constructor() {
