@@ -6,8 +6,8 @@ const enemyXOverlap = 38;
 const enemyYOverlap = 10;
 
 const enemySprites = document.createElement("img");
-enemySprites.src = "sprites/enemies/satyr1.png";
-
+  enemySprites.src = "sprites/enemies/satyr1.png";
+debugger
 const playerSprites = document.createElement("img");
 playerSprites.src = "sprites/heroine_sprite.png";
 
@@ -141,7 +141,7 @@ CanvasDisplay.prototype.drawPlayer = function (player, x, y, width, height) {
 };
 
 CanvasDisplay.prototype.drawEnemy = function (enemy, x, y, width, height) {
-
+  
   width += enemyXOverlap * 2;
   height += enemyYOverlap
   x -= enemyXOverlap;
@@ -165,28 +165,52 @@ CanvasDisplay.prototype.drawEnemy = function (enemy, x, y, width, height) {
   this.cx.restore();
 };
 
+// CanvasDisplay.prototype.drawActors = function (actors) {
+//   for (let actor of actors) {
+//     let width = actor.size.x * scale;
+//     let height = actor.size.y * scale;
+//     let x = (actor.pos.x - this.viewport.left) * scale;
+//     let y = (actor.pos.y - this.viewport.top) * scale;
+//     if (actor.type == "player") {
+//       this.drawPlayer(actor, x, y, width, height);
+//     } else if (actor.type == "enemy") {
+//       this.drawEnemy(actor, x, y, width, height);
+//     } else if (actor.type == "treasure") {
+//       let tileX = 0 * width; 
+//       this.cx.drawImage(items, tileX, 0,
+//         width, height, x,
+//         y, width, height
+//       );
+//     } else {
+//       let tileX = (actor.type == "door" ? scale * 2 - .5 : scale);
+
+//       this.cx.drawImage(tiles,
+//         tileX, 0, width, height,
+//         x, y, width, height);
+//     }
+//   }
+// };
 CanvasDisplay.prototype.drawActors = function (actors) {
   for (let actor of actors) {
     let width = actor.size.x * scale;
     let height = actor.size.y * scale;
     let x = (actor.pos.x - this.viewport.left) * scale;
     let y = (actor.pos.y - this.viewport.top) * scale;
-    if (actor.type == "player") {
-      this.drawPlayer(actor, x, y, width, height);
-    } else if (actor.type == "enemy") {
-      this.drawEnemy(actor, x, y, width, height);
-    } else if (actor.type == "treasure") {
-      let tileX = 0 * width; 
-      this.cx.drawImage(items, tileX, 0,
-        width, height, x,
-        y, width, height
-      );
-    } else {
-      let tileX = (actor.type == "door" ? scale * 2 - .5 : scale);
-
-      this.cx.drawImage(tiles,
-        tileX, 0, width, height,
-        x, y, width, height);
+    switch (actor.type) {
+      case "player":
+        this.drawPlayer(actor, x, y, width, height);
+        break;
+        case "enemy":
+          this.drawEnemy(actor, x, y, width, height);
+          break; 
+        case "treasure": 
+        let tileX = actor.spriteImage * width;
+        this.cx.drawImage(items, tileX, 0, width, height, x, y, width, height);
+        break; 
+      default:
+        tileX = (actor.type == "door" ? scale * 2 - .5 : scale);
+        this.cx.drawImage(tiles, tileX, 0, width, height, x, y, width, height);
+        break;
     }
   }
 };

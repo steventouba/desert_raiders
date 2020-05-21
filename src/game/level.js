@@ -12,9 +12,11 @@ const levelChars = {
   "~": "lavaTop",
   "T": "trap",
   "d": Door,
-  "e": Enemy,
+  "M": Enemy,
   "@": Player,
-  "C": Treasure
+  "P": Treasure,
+  "R": Treasure,
+  "E": Treasure,
 };
 
 class Level {
