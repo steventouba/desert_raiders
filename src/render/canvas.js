@@ -6,13 +6,13 @@ const enemyXOverlap = 38;
 const enemyYOverlap = 10;
 
 const minionSprites = document.createElement("img");
-  minionSprites.src = "sprites/enemies/satyr1.png";
+minionSprites.src = "sprites/enemies/satyr1.png";
 
 const shamanSprites = document.createElement("img");
-  shamanSprites.src = "sprites/enemies/satyr2.png";
+shamanSprites.src = "sprites/enemies/satyr2.png";
 
 const bigBossSprites = document.createElement("img");
-  bigBossSprites.src = "sprites/enemies/satyr3.png";
+bigBossSprites.src = "sprites/enemies/satyr3.png";
 
 const playerSprites = document.createElement("img");
 playerSprites.src = "sprites/heroine_sprite.png";
@@ -25,6 +25,7 @@ tiles.src = "sprites/tiles.png";
 
 const items = document.createElement("img"); 
 items.src = "sprites/items.png";
+
 const background = document.createElement("img");
 background.src = "sprites/background.png";
 
@@ -32,7 +33,7 @@ class CanvasDisplay {
   constructor() {
     this.canvas = document.createElement("canvas");
     let parent = document.getElementById("canvas-container");
-    parent.appendChild(this.canvas);
+    parent.appendChild(this.canvas); 
     this.canvas.width = 950;
     this.canvas.height = 550;
     this.cx = this.canvas.getContext("2d");

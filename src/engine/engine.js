@@ -59,8 +59,7 @@ exports.runGame = async function(plans, Display) {
   cx.font = "60px 'Uncial Antiqua', cursive";
   cx.fillStyle = "black";
   cx.textAlign = "center";
-  cx.fillText("👑 YOU GO GIRL 👑", 475, 275)
+  cx.fillText(" YOU WON! ", 475, 275)
 
   document.getElementById("level").textContent = `You Won! 🎉`
-  console.log("You've won!");
 }
