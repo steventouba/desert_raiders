@@ -5,9 +5,15 @@ const playerYOverlap = 10;
 const enemyXOverlap = 38;
 const enemyYOverlap = 10;
 
-const enemySprites = document.createElement("img");
-  enemySprites.src = "sprites/enemies/satyr1.png";
-debugger
+const minionSprites = document.createElement("img");
+  minionSprites.src = "sprites/enemies/satyr1.png";
+
+const shamanSprites = document.createElement("img");
+  shamanSprites.src = "sprites/enemies/satyr2.png";
+
+const bigBossSprites = document.createElement("img");
+  bigBossSprites.src = "sprites/enemies/satyr3.png";
+
 const playerSprites = document.createElement("img");
 playerSprites.src = "sprites/heroine_sprite.png";
 
@@ -141,7 +147,7 @@ CanvasDisplay.prototype.drawPlayer = function (player, x, y, width, height) {
 };
 
 CanvasDisplay.prototype.drawEnemy = function (enemy, x, y, width, height) {
-  
+
   width += enemyXOverlap * 2;
   height += enemyYOverlap
   x -= enemyXOverlap;
@@ -161,35 +167,27 @@ CanvasDisplay.prototype.drawEnemy = function (enemy, x, y, width, height) {
     flipHorizontally(this.cx, x + width / 2);
   }
   let tileX = tile * width;
-  this.cx.drawImage(enemySprites, tileX, 0, width, height, x, y, width, height);
+  let source; 
+
+  switch (enemy.spriteImage) {
+    case 0:
+      source = minionSprites; 
+      break;
+    case 1: 
+      source = shamanSprites; 
+      break; 
+    case 2: 
+      source = bigBossSprites; 
+      break; 
+    default:
+      source = minionSprites; 
+      break;
+  }
+  
+  this.cx.drawImage(source, tileX, 0, width, height, x, y, width, height);
   this.cx.restore();
 };
 
-// CanvasDisplay.prototype.drawActors = function (actors) {
-//   for (let actor of actors) {
-//     let width = actor.size.x * scale;
-//     let height = actor.size.y * scale;
-//     let x = (actor.pos.x - this.viewport.left) * scale;
-//     let y = (actor.pos.y - this.viewport.top) * scale;
-//     if (actor.type == "player") {
-//       this.drawPlayer(actor, x, y, width, height);
-//     } else if (actor.type == "enemy") {
-//       this.drawEnemy(actor, x, y, width, height);
-//     } else if (actor.type == "treasure") {
-//       let tileX = 0 * width; 
-//       this.cx.drawImage(items, tileX, 0,
-//         width, height, x,
-//         y, width, height
-//       );
-//     } else {
-//       let tileX = (actor.type == "door" ? scale * 2 - .5 : scale);
-
-//       this.cx.drawImage(tiles,
-//         tileX, 0, width, height,
-//         x, y, width, height);
-//     }
-//   }
-// };
 CanvasDisplay.prototype.drawActors = function (actors) {
   for (let actor of actors) {
     let width = actor.size.x * scale;

@@ -25,7 +25,6 @@ class Treasure {
   }
 
   static create(pos, ch) {
-    debugger
     let basePos = pos.plus(new Vector(0.2, 0.1));
     return new Treasure(basePos, basePos, (Math.random() * Math.PI * 2), ch);
   }

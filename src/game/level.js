@@ -13,6 +13,8 @@ const levelChars = {
   "T": "trap",
   "d": Door,
   "M": Enemy,
+  "S": Enemy,
+  "B": Enemy,
   "@": Player,
   "P": Treasure,
   "R": Treasure,
