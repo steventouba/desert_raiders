@@ -12,8 +12,7 @@ class Player {
   get type() { return "player"; }
 
   static create(pos) {
-    return new Player(pos.plus(new Vector(0, -0.6)),
-      new Vector(0, 0));
+    return new Player(pos.plus(new Vector(0, -0.6)), new Vector(0, 0));
   }
 
 }

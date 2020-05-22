@@ -4,13 +4,40 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link type="text/css" rel="stylesheet" href="./dist/main.css">
+  <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
   <script src="./dist/main.js"></script>
   <title>Mad Scientist</title>
 </head>
-<body class="root">
-  <div class="=container">
-    <div id="canvas-container"/>
-    <div>test</div>
+<body id="root">
+  <header class="header">Mad Scientist</header>
+  <div class="container">
+    <div class="game-key-legend-container">
+        <div class="game-key-legend">
+        <h1>Game Controls</h1>
+        <hr>
+        <div class="game-key-div">
+        <div class="keyboard-key">w</div>
+        <span>jump</span>
+      </div>
+      <div class="game-key-div">
+        <div class="keyboard-key">a</div>
+        <span>move left</span>
+      </div>
+      <div class="game-key-div">
+        <div class="keyboard-key">d</div>
+        <span>move right</span>
+      </div>
+      </div>
+    </div>
+  <div id="canvas-container"></div>
+  <div class="background-info">
+    <h1>Why is it called Mad Scientist?</h1>
+    <p>
+      The original theme of the game was science... <br><br>
+      But it turns out, you can't find many free scientist sprites and lab tilesets. 
+      As such your goal is to collect all the treasure those pesky satyrs are
+      hoarding, to help fullfill this devs dream. <br><br> Go forth and collect!
+    </p>
   </div>
 </body>
 </html>

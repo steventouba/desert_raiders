@@ -1,48 +1,135 @@
-.root { 
+body {
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  font-family: 'MedievalSharp', cursive;
+  background-image: url("../images/asfalt-light.png");
+  background-color: burlywood;
 }
 
-.container { 
+.header {
+  margin-top: 10px;
+  font-size: 68px;
+}
+
+.background-info { 
+  width: 20%;
+}
+
+.background-info > h1 { 
+  text-align: center;
+}
+
+.background-info > p { 
+  text-align: justify;
+  font-size: 24px;
+  text-shadow: 2px 2px 15px #000000;
+}
+
+
+.container {
   display: flex;
-  flex-direction: co;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
 }
+
+canvas {
+  width: 950px;
+  height: 530px;
+  border-radius: 10px;
+  margin: 20px;
+  box-shadow: 5px 10px 8px #888888;
+}
+
+.canvas-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.canvas-container h1 {
+  margin: 0;
+  font-size: 40px;
+  padding: 0 20px;
+}
+
+.canvas-container hr {
+  border-bottom: solid 2px black;
+  width: 400px;
+}
+
+.game-key-legend-container {
+  padding: 0 5px;
+}
+
+
+.game-key-legend {
+  display: flex;
+  flex-direction: column;
+  border: solid 5px #9b724d;
+  margin: 10px;
+  padding: 5px;
+  border-radius: 10px;
+  width: 300px;
+  align-items: center;
+  background-color: whitesmoke;
+  box-shadow: 5px 10px 8px #888888;
+
+}
+
+.game-key-legend h1 {
+  margin: 5px;
+}
+
+.game-key-legend hr {
+  border-bottom: solid 1px black;
+  width: 250px;
+  margin: 5px;
+}
+
+.game-key-div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 200px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.keyboard-key {
+    width: 40px;
+    height: 40px;
+    border: 1px black solid;
+    border-radius: 3px;
+    font-size: 20px;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: white;
+    box-shadow: 2px 4px 3px #888888;
+}
+
+#level {
+    align-self: flex-start;
+    font-size: 20px;
+}
+
+/* CSS from game tutorial below */
+
 .background { 
-  table-layout: fixed;
-  border-spacing: 0;              
+    table-layout: fixed;
+    border-spacing: 0;
 }
-.background td {
-  padding: 0;                     
+
+.background td { 
+    padding: 0;
 }
 
 .game {
   overflow: hidden;
-  min-width: 600px;
-  min-height: 450px;
   position: relative;
-}
-
-canvas {
-    width: 950px;
-    height: 530px;
-    border-radius: 10px;
-    margin: 20px;
-    box-shadow: 5px 10px 8px #888888;
-}
-
-#canvas-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.canvas-container h1 {
-    margin: 0;
-    font-size: 40px;
-    padding: 0 20px;
-}
-
-.canvas-container hr {
-    border-bottom: solid 2px black;
-    width: 400px;
 }
