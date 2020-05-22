@@ -3,8 +3,14 @@ const Engine = require('./engine/engine.js');
 
 
 document.addEventListener("DOMContentLoaded", function () {
-
-  Engine.runGame(GAME_LEVELS, CanvasDisplay)
+  
+  document.getElementById("hero-select").addEventListener("click", function() {
+    let heroId = event.target.dataset.hero;
+    let hero = document.getElementById("hero-select");
+    debugger
+    hero.remove();
+    Engine.runGame(GAME_LEVELS, CanvasDisplay, heroId)
+  })
 
 });
 

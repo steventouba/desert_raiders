@@ -15,7 +15,7 @@ const bigBossSprites = document.createElement("img");
 bigBossSprites.src = "./dist/sprites/enemies/satyr3.png";
 
 const playerSprites = document.createElement("img");
-playerSprites.src = "./dist/sprites/heroine_sprite.png";
+playerSprites.src = "./dist/sprites/heroes/heroine_sprite.png";
 
 const slashingSprites = document.createElement("img");
 slashingSprites.src = "./dist/sprites/enemies/satyr2.png";
@@ -52,7 +52,9 @@ class CanvasDisplay {
   }
 }
 
-CanvasDisplay.prototype.syncState = function (state) {
+CanvasDisplay.prototype.syncState = function (state, heroId) {
+  debugger
+  parseInt(heroId) === 0 ?  true : playerSprites.src = "./dist/sprites/heroes/hero.png";
   this.updateViewport(state);
   this.drawBackground(state.level);
   this.drawActors(state.actors);
