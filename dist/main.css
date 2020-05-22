@@ -15,6 +15,7 @@ body {
 
 .background-info { 
   width: 20%;
+  padding-right: 10px;
 }
 
 .background-info > h1 { 
@@ -23,20 +24,20 @@ body {
 
 .background-info > p { 
   text-align: justify;
-  font-size: 24px;
+  font-size: 20px;
   text-shadow: 2px 2px 15px #000000;
 }
-
 
 .container {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
+  margin-right: 25px;
 }
 
 canvas {
-  width: 950px;
+  width: 900px;
   height: 530px;
   border-radius: 10px;
   margin: 20px;
@@ -55,24 +56,18 @@ canvas {
   padding: 0 20px;
 }
 
-.canvas-container hr {
-  border-bottom: solid 2px black;
-  width: 400px;
-}
-
 .game-key-legend-container {
   padding: 0 5px;
 }
-
 
 .game-key-legend {
   display: flex;
   flex-direction: column;
   border: solid 5px #9b724d;
-  margin: 10px;
+  margin: 5px;
   padding: 5px;
   border-radius: 10px;
-  width: 300px;
+  width: 250px;
   align-items: center;
   background-color: whitesmoke;
   box-shadow: 5px 10px 8px #888888;
@@ -116,6 +111,32 @@ canvas {
 #level {
     align-self: flex-start;
     font-size: 20px;
+}
+
+.footer { 
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  width: 100%; 
+  bottom: 0;
+  background-color:burlywood;
+  border-top: 1px solid  #062474;
+  padding: 5px;
+};
+
+.footer  p { 
+  font-size: 24px;
+}
+
+.footer-links { 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.link { 
+  padding-left: 5px;
 }
 
 /* CSS from game tutorial below */
