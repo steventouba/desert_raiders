@@ -13,6 +13,14 @@
   <header class="header">Mad Scientist</header>
   <div class="container">
     <div class="game-key-legend-container">
+      <audio id="player" src="./dist/audio/99sounds loop_005.wav" loop></audio>
+      <div id="audio-controls">
+        <h1>Audio</h1>
+        <button onclick="document.getElementById('player').play()">Play</button>
+        <button onclick="document.getElementById('player').pause()">Pause</button>
+        <button onclick="document.getElementById('player').volume+=0.1">Volume Up</button>
+        <button onclick="document.getElementById('player').volume-=0.1">Volume Down</button>
+      </div>
         <div class="game-key-legend">
         <h1>Game Controls</h1>
         <hr>
