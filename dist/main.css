@@ -51,6 +51,7 @@ canvas {
 }
 
 .canvas-container h1 {
+  position: relative;
   margin: 0;
   font-size: 40px;
   padding: 0 20px;
@@ -93,29 +94,39 @@ canvas {
 }
 
 .keyboard-key {
-    width: 40px;
-    height: 40px;
-    border: 1px black solid;
-    border-radius: 3px;
-    font-size: 20px;
-    text-transform: uppercase;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 5px;
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: white;
-    box-shadow: 2px 4px 3px #888888;
+  width: 40px;
+  height: 40px;
+  border: 1px black solid;
+  border-radius: 3px;
+  font-size: 20px;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 5px;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: white;
+  box-shadow: 2px 4px 3px #888888;
+}
+
+button { 
+  outline: none;
+  cursor: pointer;
+}
+
+.select-hero { 
+  font-size: 24px;
+  text-align: center;
 }
 
 .avatar { 
   border: none;
   background-color: inherit;
+  transition: all .2s ease-in-out;
 }
 
-#level {
-    align-self: flex-start;
-    font-size: 20px;
+.avatar:hover {
+  transform: scale(1.2);
 }
 
 .footer { 
@@ -158,4 +169,10 @@ canvas {
 .game {
   overflow: hidden;
   position: relative;
+}
+#replay {
+  display: none;
+  position: absolute;
+  right: 45%;
+  top: 60%;
 }

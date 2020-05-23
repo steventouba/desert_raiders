@@ -5,16 +5,17 @@ const Engine = require('./engine/engine.js');
 document.addEventListener("DOMContentLoaded", function () {
   
   document.getElementById("hero-select").addEventListener("click", function() {
-    let heroId = event.target.dataset.hero;
-    let hero = document.getElementById("hero-select");
-    debugger
+    const heroId = event.target.dataset.hero;
+    const hero = document.getElementById("hero-select");
+    const info = document.getElementById("background-info");
+    info.remove();
     hero.remove();
     Engine.runGame(GAME_LEVELS, CanvasDisplay, heroId)
   })
 
 });
 
-let GAME_LEVELS = [`
+const GAME_LEVELS = [`
 ........................../........................../........................../........................../........................../........................./@..|...EPR......MSB...|...../############tt###tt######/##########################`,
 `........................../........................../........................../........................../........................./........................./@..|...EPR.........|...../###########tt###tt######/##########################`
 ];

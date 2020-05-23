@@ -46,7 +46,8 @@ exports.runGame = async function(plans, Display, heroId) {
       background.src = `./dist/sprites/background/background${level}.png`
     }
   }
-  let canvasEl = document.createElement("canvas");
+  
+  let canvasEl = document.createElement("canvas")
   let parent = document.getElementById("canvas-container");
   parent.appendChild(canvasEl);
   canvasEl.width = 950;
@@ -62,5 +63,5 @@ exports.runGame = async function(plans, Display, heroId) {
   cx.textAlign = "center";
   cx.fillText(" YOU WON! ", 475, 275)
 
-  document.getElementById("level").textContent = `You Won! 🎉`
+  // document.getElementById("level").textContent = `You Won! 🎉`
 }
