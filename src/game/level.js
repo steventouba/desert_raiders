@@ -1,7 +1,7 @@
-const Player = require('../actors/player.js')
-const Enemy = require('../actors/enemy.js')
-const Door = require('../actors/door.js')
-const Treasure = require('../actors/treasure.js')
+const Player = require('../actors/player.js');
+const Enemy = require('../actors/enemy.js');
+const Door = require('../actors/door.js');
+const Treasure = require('../actors/treasure.js');
 const Vector = require('./vector.js');
 
 const levelChars = {

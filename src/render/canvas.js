@@ -15,10 +15,10 @@ const bigBossSprites = document.createElement("img");
 bigBossSprites.src = "./dist/sprites/enemies/satyr3.png";
 
 const playerSprites = document.createElement("img");
-playerSprites.src = "./dist/sprites/heroes/heroine_sprite.png";
+playerSprites.src = "./dist/sprites/heroes/heroine.png";
 
 const slashingSprites = document.createElement("img");
-slashingSprites.src = "./dist/sprites/enemies/satyr2.png";
+slashingSprites.src = "./dist/sprites/heroes/heroine_attack.png";
 
 const tiles = document.createElement("img");
 tiles.src = "./dist/sprites/tiles.png";
@@ -53,7 +53,11 @@ class CanvasDisplay {
 }
 
 CanvasDisplay.prototype.syncState = function (state, heroId) {
-  parseInt(heroId) === 0 ?  true : playerSprites.src = "./dist/sprites/heroes/hero.png";
+   if (parseInt(heroId) === 1 ) { 
+     playerSprites.src = "./dist/sprites/heroes/hero.png"; 
+     slashingSprites.src = "./dist/sprites/heroes/hero_attack.png";
+   }
+
   this.updateViewport(state);
   this.drawBackground(state.level);
   this.drawActors(state.actors);
@@ -197,6 +201,7 @@ CanvasDisplay.prototype.drawActors = function (actors) {
     let height = actor.size.y * scale;
     let x = (actor.pos.x - this.viewport.left) * scale;
     let y = (actor.pos.y - this.viewport.top) * scale;
+    let tileX; 
     switch (actor.type) {
       case "player":
         this.drawPlayer(actor, x, y, width, height);
@@ -205,7 +210,7 @@ CanvasDisplay.prototype.drawActors = function (actors) {
           this.drawEnemy(actor, x, y, width, height);
           break; 
         case "treasure": 
-        let tileX = actor.spriteImage * width;
+          tileX = actor.spriteImage * width;
         this.cx.drawImage(items, tileX, 0, width, height, x, y, width, height);
         break; 
       default:
