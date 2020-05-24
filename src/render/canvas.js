@@ -53,7 +53,6 @@ class CanvasDisplay {
 }
 
 CanvasDisplay.prototype.syncState = function (state, heroId) {
-  debugger
   parseInt(heroId) === 0 ?  true : playerSprites.src = "./dist/sprites/heroes/hero.png";
   this.updateViewport(state);
   this.drawBackground(state.level);
