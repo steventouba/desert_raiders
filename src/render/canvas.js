@@ -27,7 +27,7 @@ const items = document.createElement("img");
 items.src = "./dist/sprites/items.png";
 
 window.background = document.createElement("img");
-background.src = "./dist/sprites/background/background.png";
+background.src = "./dist/sprites/background/background0.png";
 
 class CanvasDisplay {
   constructor() {

@@ -21,7 +21,7 @@ Player.prototype.size = new Vector(0.8, 1.6) // this in tandem with the static c
 
 const playerXSpeed = 7;
 const gravity = 30;
-const jumpSpeed = 13.5;
+const jumpSpeed = 14.5;
 const enemyXSpeed = 7;
 
 Player.prototype.update = function (time, state, keys) {

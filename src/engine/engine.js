@@ -41,9 +41,10 @@ exports.runGame = async function(plans, Display, heroId) {
   for (let level = 0; level < plans.length;) {
     let status = await runLevel(new Level(plans[level]), Display, heroId);
     if (status == "won") {
-      console.log(`You beat level ${level + 1}`);
       level++;
-      background.src = `./dist/sprites/background/background${level}.png`
+      background.src = `./dist/sprites/background/background${(level % 4)}.png`
+      const levelId = document.getElementById('level-id');
+      levelId.innerHTML = `Level ${level + 1}` 
     }
   }
   
