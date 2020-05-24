@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link type="text/css" rel="stylesheet" href="./dist/main.css">
   <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/d8305d6b57.js" crossorigin="anonymous"></script>
   <script src="./dist/main.js"></script>
   <title>Mad Scientist</title>
 </head>
@@ -17,10 +18,10 @@
       <audio id="player" src="./dist/audio/99sounds loop_005.wav" type="audio/wav" loop></audio>
       <div id="audio-controls">
         <h1>Audio Controls</h1>
-        <button onclick="document.getElementById('player').play()">Play</button>
-        <button onclick="document.getElementById('player').pause()">Pause</button>
-        <button onclick="document.getElementById('player').volume+=0.1">Volume Up</button>
-        <button onclick="document.getElementById('player').volume-=0.1">Volume Down</button>
+        <button onclick="document.getElementById('player').play()"><i class="fas fa-play-circle"></i></button>
+        <button onclick="document.getElementById('player').pause()"><i class="fas fa-volume-mute"></i></button>
+        <button onclick="document.getElementById('player').volume+=0.1"><i class="fas fa-volume-up"></i></button>
+        <button onclick="document.getElementById('player').volume-=0.1"><i class="fas fa-volume-down"></i></button>
       </div>
         <div class="game-key-legend">
         <h1>Game Controls</h1>

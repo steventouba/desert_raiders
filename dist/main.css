@@ -109,8 +109,19 @@ canvas {
   box-shadow: 2px 4px 3px #888888;
 }
 
-#audio-controls{ 
+#audio-controls { 
   padding-left: 10px;
+}
+
+#audio-controls > button { 
+  outline: none;
+  background: none;
+  border: none;
+  font-size: 20px;
+}
+
+#audio-controls > button:active { 
+  transform: translateY(4px);
 }
 
 button { 
@@ -131,6 +142,11 @@ button {
 
 .avatar:hover {
   transform: scale(1.2);
+}
+
+#level-id { 
+  font-weight: bolder;
+  font-size: 24px;
 }
 
 .footer { 
