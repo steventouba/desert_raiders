@@ -4,9 +4,11 @@ function trackKeys(keys) {
   let down = Object.create(null);
   function track(event) {
     if (event.key === "w") { 
-      const jumpSound = document.getElementById("jump"); 
-      jumpSound.play();
+      document.getElementById("jump").play(); 
+    } else if (event.key === "Shift") { 
+      document.getElementById("attack").play();
     }
+    
     if (keys.includes(event.key)) {
       down[event.key] = event.type == "keydown";
     }
