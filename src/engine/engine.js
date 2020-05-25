@@ -65,7 +65,4 @@ exports.runGame = async function(plans, Display, heroId) {
   cx.fillText(" YOU WON!  ", 475, 150)
   cx.fillText("Stayed tuned for Mad Scientist II, with SCIENCE!!", 475, 250)
   cx.fillText(" Hopefully... ", 475, 250)
-
-
-  // document.getElementById("level").textContent = `You Won! 🎉`
-}
+};
