@@ -18,7 +18,7 @@ function runAnimation(frameFunc) {
 function runLevel(level, Display, heroId) {
   let display = new Display(document.body, level);
   let state = State.start(level);
-  let ending = .5;
+  let ending = .2;
   return new Promise(resolve => {
     runAnimation(time => {
       state = state.update(time, keys);
