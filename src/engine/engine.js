@@ -63,7 +63,7 @@ exports.runGame = async function(plans, Display, heroId) {
   cx.fillStyle = "black";
   cx.textAlign = "center";
   cx.fillText(" YOU WON!  ", 475, 150)
-  cx.fillText("Stayed tuned for Mad Scientist II, with SCIENCE!!", 475, 250)
-  cx.fillText(" Hopefully... ", 475, 300)
+  cx.fillText("What did you expect, a cookie?", 475, 250)
+  cx.fillText(" Get outta here... but come back soon! ", 475, 300)
   document.getElementById("level-id").remove();
 };
