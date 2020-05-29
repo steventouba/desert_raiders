@@ -13,11 +13,12 @@ function trackKeys(keys) {
     
     if (keys.includes(event.key)) {
       event.preventDefault();
-      down[event.key] = event.type == "keydown";
+      down[event.key] = event.type === "keydown";
     }
   }
   window.addEventListener("keydown", track);
   window.addEventListener("keyup", track);
+
   return down;
 }
 

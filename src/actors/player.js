@@ -24,6 +24,7 @@ const gravity = 30;
 const jumpSpeed = 14.5;
 
 Player.prototype.update = function (time, state, keys) {
+
   let xSpeed = 0;
   let slashing = false;
   if (keys.a || keys.ArrowLeft) xSpeed -= playerXSpeed;
@@ -44,6 +45,7 @@ Player.prototype.update = function (time, state, keys) {
   } else {
     ySpeed = 0;
   }
+
   return new Player(pos, new Vector(xSpeed, ySpeed), slashing);
 };
 
