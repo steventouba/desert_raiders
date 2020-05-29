@@ -63,7 +63,8 @@ exports.runGame = async function(plans, Display, heroId) {
   cx.fillStyle = "black";
   cx.textAlign = "center";
   cx.fillText(" YOU WON!  ", 475, 150)
-  cx.fillText("What did you expect, a cookie?", 475, 250)
-  cx.fillText(" Get outta here... but come back soon! ", 475, 300)
+  cx.fillText(" That's it? ", 475, 250)
+  cx.fillText(" What do you mean that's it?", 475, 300)
+  cx.fillText(" What did you expect a cookie? ", 475, 350)
   document.getElementById("level-id").remove();
 };
