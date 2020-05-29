@@ -24,12 +24,11 @@ const gravity = 30;
 const jumpSpeed = 14.5;
 
 Player.prototype.update = function (time, state, keys) {
-  debugger
   let xSpeed = 0;
   let slashing = false;
   if (keys.a || keys.ArrowLeft) xSpeed -= playerXSpeed;
   if (keys.d || keys.ArrowRight) xSpeed += playerXSpeed;
-  if (keys.Shift) slashing = true;
+  if (keys.Shift || keys[" "]) slashing = true;
   let pos = this.pos;
   let movedX = pos.plus(new Vector(xSpeed * time, 0));
   if (!state.level.touches(movedX, this.size, "wall")) {

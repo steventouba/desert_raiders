@@ -1,12 +1,13 @@
-const keys = trackKeys(["a", "d", "w", "ArrowLeft", "ArrowRight", "ArrowUp", "Shift"]);
+const keys = trackKeys(["a", "d", "w",
+  "ArrowLeft", "ArrowRight", "ArrowUp",
+  "Shift", " "]);
 
 function trackKeys(keys) {
-  debugger
   let down = Object.create(null);
   function track(event) {
     if (event.key === "w" || event.key === "ArrowUp") { 
       document.getElementById("jump").play(); 
-    } else if (event.key === "Shift") { 
+    } else if (event.key === "Shift" || event.key === " ") { 
       document.getElementById("attack").play();
     }
     
