@@ -22,13 +22,13 @@ Player.prototype.size = new Vector(0.8, 1.6) // this in tandem with the static c
 const playerXSpeed = 7;
 const gravity = 30;
 const jumpSpeed = 14.5;
-const enemyXSpeed = 7;
 
 Player.prototype.update = function (time, state, keys) {
+  debugger
   let xSpeed = 0;
   let slashing = false;
-  if (keys.a) xSpeed -= playerXSpeed;
-  if (keys.d) xSpeed += playerXSpeed;
+  if (keys.a || keys.ArrowLeft) xSpeed -= playerXSpeed;
+  if (keys.d || keys.ArrowRight) xSpeed += playerXSpeed;
   if (keys.Shift) slashing = true;
   let pos = this.pos;
   let movedX = pos.plus(new Vector(xSpeed * time, 0));
@@ -40,7 +40,7 @@ Player.prototype.update = function (time, state, keys) {
 
   if (!state.level.touches(movedY, this.size, "wall")) {
     pos = movedY;
-  } else if (keys.w && ySpeed > 0) {
+  } else if ((keys.w || keys.ArrowUp) && ySpeed > 0) {
     ySpeed = -jumpSpeed;
   } else {
     ySpeed = 0;
