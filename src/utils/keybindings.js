@@ -11,7 +11,7 @@ function trackKeys(keys) {
     }
     
     if (keys.includes(event.key)) {
-      debugger
+      event.preventDefault();
       down[event.key] = event.type == "keydown";
     }
   }

@@ -203,7 +203,7 @@ eval("\nconst scale = 64;\nconst playerXOverlap = 38;\nconst playerYOverlap = 10
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("const keys = trackKeys([\"a\", \"d\", \"w\", \"ArrowLeft\", \"ArrowRight\", \"ArrowUp\", \"Shift\"]);\n\nfunction trackKeys(keys) {\n  debugger\n  let down = Object.create(null);\n  function track(event) {\n    if (event.key === \"w\" || event.key === \"ArrowUp\") { \n      document.getElementById(\"jump\").play(); \n    } else if (event.key === \"Shift\") { \n      document.getElementById(\"attack\").play();\n    }\n    \n    if (keys.includes(event.key)) {\n      debugger\n      down[event.key] = event.type == \"keydown\";\n    }\n  }\n  window.addEventListener(\"keydown\", track);\n  window.addEventListener(\"keyup\", track);\n  return down;\n}\n\nmodule.exports = keys; \n\n//# sourceURL=webpack:///./src/utils/keybindings.js?");
+eval("const keys = trackKeys([\"a\", \"d\", \"w\", \"ArrowLeft\", \"ArrowRight\", \"ArrowUp\", \"Shift\"]);\n\nfunction trackKeys(keys) {\n  debugger\n  let down = Object.create(null);\n  function track(event) {\n    if (event.key === \"w\" || event.key === \"ArrowUp\") { \n      document.getElementById(\"jump\").play(); \n    } else if (event.key === \"Shift\") { \n      document.getElementById(\"attack\").play();\n    }\n    \n    if (keys.includes(event.key)) {\n      event.preventDefault();\n      down[event.key] = event.type == \"keydown\";\n    }\n  }\n  window.addEventListener(\"keydown\", track);\n  window.addEventListener(\"keyup\", track);\n  return down;\n}\n\nmodule.exports = keys; \n\n//# sourceURL=webpack:///./src/utils/keybindings.js?");
 
 /***/ }),
 
