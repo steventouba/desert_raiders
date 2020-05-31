@@ -3,7 +3,7 @@ const playerXOverlap = 38;
 const playerYOverlap = 10;
 const enemyXOverlap = 38;
 const enemyYOverlap = 10;
-window.score = 0; 
+window.score; 
 
 const minionSprites = document.createElement("img");
 minionSprites.src = "./dist/sprites/enemies/satyr1.png";
@@ -226,6 +226,7 @@ CanvasDisplay.prototype.drawActors = function (actors) {
 CanvasDisplay.prototype.drawScore = function drawScore() {
   this.cx.font = "16px Arial";
   this.cx.fillStyle = "#000000";
+  if (!window.score) window.score = 0; 
   this.cx.fillText("Score: " + score, 855, 20);
 }
 
