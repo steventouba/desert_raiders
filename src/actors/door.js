@@ -10,13 +10,12 @@ class Door {
   get type() { return "door"; }
 
   static create(pos) {
-    return new Door(pos.plus(new Vector(-0.1, -0.2)),
-      new Vector(0, 0));
+    return new Door(pos.plus(new Vector(-0.1, 0.1)), new Vector(0, 0));
   }
 
 }
 
-Door.prototype.size = new Vector(1, 1.2)
+Door.prototype.size = new Vector(1.5, 1.0)
 
 Door.prototype.collide = function (state) {
   return new State(state.level, state.actors, "won");

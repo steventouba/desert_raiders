@@ -20,6 +20,9 @@ playerSprites.src = "./dist/sprites/heroes/heroine.png";
 const slashingSprites = document.createElement("img");
 slashingSprites.src = "./dist/sprites/heroes/heroine_attack.png";
 
+const doorSprite = document.createElement("img");
+doorSprite.src = "./dist/sprites/chest_closed.png"
+
 const tiles = document.createElement("img");
 tiles.src = "./dist/sprites/tiles.png";
 
@@ -213,10 +216,15 @@ CanvasDisplay.prototype.drawActors = function (actors) {
           break; 
         case "treasure": 
           tileX = actor.spriteImage * width;
-        this.cx.drawImage(items, tileX, 0, width, height, x, y, width, height);
-        break; 
+          this.cx.drawImage(items, tileX, 0, width, height, x, y, width, height);
+          break; 
+        case "door": 
+        debugger
+          tileX = 0;
+          this.cx.drawImage(doorSprite, tileX, 0, width, height, x, y, width, height);
+          break;
       default:
-        tileX = (actor.type == "door" ? scale * 2 - .5 : scale);
+        tileX = (actor.type == "door" ? scale : scale);
         this.cx.drawImage(tiles, tileX, 0, width, height, x, y, width, height);
         break;
     }
