@@ -63,8 +63,9 @@ exports.runGame = async function(plans, Display, heroId) {
   cx.font = "40px 'Uncial Antiqua', cursive";
   cx.fillStyle = "black";
   cx.textAlign = "center";
-  cx.fillText(" YOU WON!  ", 475, 150)
-  cx.fillText(" What did you expect a cookie? ", 475, 250)
-  cx.fillText(" It's not called dessert raiders. ", 475, 350)
+  cx.fillText(" YOU WON! ", 475, 150)
+  cx.fillText(`You collected: ${score}  of 43 possible treasures`, 475, 250)
+  cx.fillText(" What did you expect a cookie? ", 475, 350)
+  cx.fillText(" It's not called dessert raiders. ", 475, 450)
   document.getElementById("level-id").remove();
 };

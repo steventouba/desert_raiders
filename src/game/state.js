@@ -6,6 +6,7 @@ class State {
     this.level = level;
     this.actors = actors;
     this.status = status;
+    if (this.status === 'lost') score = 0; 
   }
 
   static start(level) {
@@ -26,12 +27,10 @@ State.prototype.update = function (time, keys) {
 
   let player = newState.player;
   if (this.level.touches(player.pos, player.size, "lava")) {
-    console.log('lost')
     return new State(this.level, actors, "lost");
   }
 
   if (this.level.touches(player.pos, player.size, "lavaTop")) {
-    console.log('lost')
     return new State(this.level, actors, "lost");
   }
 
