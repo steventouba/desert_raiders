@@ -64,7 +64,7 @@ exports.runGame = async function(plans, Display, heroId) {
   cx.fillStyle = "black";
   cx.textAlign = "center";
   cx.fillText(" YOU WON! ", 475, 150)
-  cx.fillText(`You collected: ${score}  of 43 possible treasures`, 475, 250)
+  cx.fillText(`You collected: ${score}  of 345 possible treasures`, 475, 250)
   cx.fillText(" What did you expect a cookie? ", 475, 350)
   cx.fillText(" It's not called dessert raiders. ", 475, 450)
   document.getElementById("level-id").remove();
