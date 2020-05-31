@@ -1,3 +1,4 @@
+
 exports.overlap = function(actor1, actor2) {
   return (
     actor1.pos.x + actor1.size.x > actor2.pos.x &&

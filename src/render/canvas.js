@@ -1,9 +1,9 @@
-
 const scale = 64;
 const playerXOverlap = 38;
 const playerYOverlap = 10;
 const enemyXOverlap = 38;
 const enemyYOverlap = 10;
+window.score = 0; 
 
 const minionSprites = document.createElement("img");
 minionSprites.src = "./dist/sprites/enemies/satyr1.png";
@@ -61,6 +61,7 @@ CanvasDisplay.prototype.syncState = function (state, heroId) {
   this.updateViewport(state);
   this.drawBackground(state.level);
   this.drawActors(state.actors);
+  this.drawScore();
 };
 
 CanvasDisplay.prototype.updateViewport = function (state) {
@@ -221,5 +222,11 @@ CanvasDisplay.prototype.drawActors = function (actors) {
     }
   }
 };
+
+CanvasDisplay.prototype.drawScore = function drawScore() {
+  this.cx.font = "16px Arial";
+  this.cx.fillStyle = "#000000";
+  this.cx.fillText("Score: " + score, 855, 20);
+}
 
 module.exports = CanvasDisplay; 

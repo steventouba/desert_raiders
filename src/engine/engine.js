@@ -29,6 +29,7 @@ function runLevel(level, Display, heroId) {
         ending -= time;
         return true;
       } else {
+        score -= score; 
         display.clear();
         resolve(state.status);
         return false;
@@ -45,6 +46,7 @@ exports.runGame = async function(plans, Display, heroId) {
       background.src = `./dist/sprites/background/background${(level % 4)}.png`
       const levelId = document.getElementById('level-id');
       levelId.innerHTML = `Level ${level + 1}` 
+      console.log(totalScore)
     }
   }
   
