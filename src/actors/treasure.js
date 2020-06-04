@@ -35,7 +35,6 @@ Treasure.prototype.size = new Vector(0.45, 0.6);
 Treasure.prototype.collide = function (state) {
   const coinSound = document.getElementById('coins'); 
   coinSound.play();
-  debugger
   score += (this.spriteImage + 1) * 5; 
   let filtered = state.actors.filter(a => a != this);
   let status = state.status;

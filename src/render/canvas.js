@@ -219,7 +219,6 @@ CanvasDisplay.prototype.drawActors = function (actors) {
           this.cx.drawImage(items, tileX, 0, width, height, x, y, width, height);
           break; 
         case "door": 
-        debugger
           tileX = 0;
           this.cx.drawImage(doorSprite, tileX, 0, width, height, x, y, width, height);
           break;
