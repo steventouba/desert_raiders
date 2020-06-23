@@ -1,6 +1,6 @@
 # Desert Raiders
 
-[Live Link](https://steventouba.github.io/mad_scientist/)
+[Live Link](https://steventouba.github.io/desert_raiders/)
 
 ## Background
 Desert Raiders is a classical 2-D platformer inspired by games such as Super Mario Bros and Prince of Persia. 
