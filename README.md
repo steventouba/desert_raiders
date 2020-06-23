@@ -16,5 +16,5 @@ Canvas for effects and animations
 ## Game Logic and Functionality 
 
 **Movement** 
-  Users can move and attack using an combination of the following keys: "W", "A", "D", "LeftArrow", "RightArrow", "UpArrow", "SHIFT", "SPACE". 
-  [image](./images/movement.gif)
+  Users can move and attack using an combination of the following keys: "W", "A", "D", "LeftArrow", "RightArrow", "UpArrow", "SHIFT", "SPACE".   
+  ![image](./images/movement.gif)
