@@ -18,3 +18,30 @@ Canvas for effects and animations
 **Movement** 
   Users can move and attack using an combination of the following keys: "W", "A", "D", "LeftArrow", "RightArrow", "UpArrow", "SHIFT", "SPACE".   
   ![image](./images/movement.gif)
+  
+  The following function is used to track key presses and respond to user input. 
+  ```javascript 
+  const keys = trackKeys(["a", "d", "w",
+  "ArrowLeft", "ArrowRight", "ArrowUp",
+  "Shift", " "]);
+
+function trackKeys(keys) {
+  let down = Object.create(null);
+  function track(event) {
+    if (event.key === "w" || event.key === "ArrowUp") { 
+      document.getElementById("jump").play(); 
+    } else if (event.key === "Shift" || event.key === " ") { 
+      document.getElementById("attack").play();
+    }
+    
+    if (keys.includes(event.key)) {
+      event.preventDefault();
+      down[event.key] = event.type === "keydown";
+    }
+  }
+  window.addEventListener("keydown", track);
+  window.addEventListener("keyup", track);
+
+  return down;
+}
+```
