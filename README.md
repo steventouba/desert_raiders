@@ -45,3 +45,8 @@ function trackKeys(keys) {
   return down;
 }
 ```
+
+**Backgrounds and Enemies**   
+  Depending on the level and user location within a level, different backgrounds
+  and enemies are drawn to the canvas.   
+  ![image](./images/backgrounds.gif)
